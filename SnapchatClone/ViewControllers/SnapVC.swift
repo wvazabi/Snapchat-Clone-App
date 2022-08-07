@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SnapVC: UIViewController {
 
+    @IBOutlet weak var timeLeftText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
