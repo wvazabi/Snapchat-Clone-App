@@ -35,6 +35,9 @@
 		1A84684128A121B8005B65E3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84684028A121B8005B65E3 /* FirebaseFirestoreSwift */; };
 		1A84684328A121B8005B65E3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84684228A121B8005B65E3 /* FirebaseStorage */; };
 		1A84684528A121B8005B65E3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84684428A121B8005B65E3 /* FirebaseStorageCombine-Community */; };
+		1A84684728A1390F005B65E3 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84684628A1390F005B65E3 /* FeedCell.swift */; };
+		1A84684928A14349005B65E3 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84684828A14348005B65E3 /* Snap.swift */; };
+		1A84684C28A153ED005B65E3 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84684B28A153ED005B65E3 /* SDWebImageSVGCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,8 @@
 		1A84682D28A0196B005B65E3 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		1A84682F28A02F21005B65E3 /* Screen Shot 2022-08-01 at 19.34.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2022-08-01 at 19.34.26.png"; sourceTree = "<group>"; };
 		1A84683128A11608005B65E3 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		1A84684628A1390F005B65E3 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		1A84684828A14348005B65E3 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 				1A84681D289EDE76005B65E3 /* FirebaseDatabase in Frameworks */,
 				1A84683528A121B8005B65E3 /* FirebaseAuth in Frameworks */,
 				1A84681F289EDE76005B65E3 /* FirebaseFirestore in Frameworks */,
+				1A84684C28A153ED005B65E3 /* SDWebImageSVGCoder in Frameworks */,
 				1A84683D28A121B8005B65E3 /* FirebaseFirestore in Frameworks */,
 				1A84683B28A121B8005B65E3 /* FirebaseDatabaseSwift in Frameworks */,
 				1A84683F28A121B8005B65E3 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -118,6 +124,7 @@
 			children = (
 				1A84682D28A0196B005B65E3 /* Error.swift */,
 				1A84683128A11608005B65E3 /* UserSingleton.swift */,
+				1A84684828A14348005B65E3 /* Snap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 				1A846826289FEE0F005B65E3 /* UploadVC.swift */,
 				1A537DEC289ED4C3007B6500 /* SignIn.swift */,
 				1A84682B28A01510005B65E3 /* SnapVC.swift */,
+				1A84684628A1390F005B65E3 /* FeedCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				1A84684028A121B8005B65E3 /* FirebaseFirestoreSwift */,
 				1A84684228A121B8005B65E3 /* FirebaseStorage */,
 				1A84684428A121B8005B65E3 /* FirebaseStorageCombine-Community */,
+				1A84684B28A153ED005B65E3 /* SDWebImageSVGCoder */,
 			);
 			productName = SnapchatClone;
 			productReference = 1A537DE5289ED4C3007B6500 /* SnapchatClone.app */;
@@ -206,6 +215,7 @@
 			packageReferences = (
 				1A846817289EDE76005B65E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1A84683328A121B8005B65E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1A84684A28A153EC005B65E3 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
 			productRefGroup = 1A537DE6289ED4C3007B6500 /* Products */;
 			projectDirPath = "";
@@ -237,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A84682E28A0196B005B65E3 /* Error.swift in Sources */,
+				1A84684728A1390F005B65E3 /* FeedCell.swift in Sources */,
 				1A846823289FEDDE005B65E3 /* FeedVC.swift in Sources */,
 				1A84683228A11608005B65E3 /* UserSingleton.swift in Sources */,
 				1A846827289FEE0F005B65E3 /* UploadVC.swift in Sources */,
@@ -244,6 +255,7 @@
 				1A537DE9289ED4C3007B6500 /* AppDelegate.swift in Sources */,
 				1A84682C28A01510005B65E3 /* SnapVC.swift in Sources */,
 				1A537DEB289ED4C3007B6500 /* SceneDelegate.swift in Sources */,
+				1A84684928A14349005B65E3 /* Snap.swift in Sources */,
 				1A846825289FEDF5005B65E3 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +492,14 @@
 				kind = branch;
 			};
 		};
+		1A84684A28A153EC005B65E3 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -552,6 +572,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A846817289EDE76005B65E3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		1A84684B28A153ED005B65E3 /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A84684A28A153EC005B65E3 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
