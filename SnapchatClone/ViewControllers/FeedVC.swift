@@ -6,25 +6,52 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController {
 
+    let firestoreDB = Firestore.firestore()
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getUserData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func getUserData(){
+    
+       
+        firestoreDB.collection("UserInfo").whereField("email", isEqualTo: Auth.auth().currentUser?.email).getDocuments { snapshot, error in
+            if error != nil {
+                self.alertPopUp(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error ")
+                
+            }
+            else{
+                if snapshot?.isEmpty == false && snapshot != nil {
+                    for document in snapshot!.documents{
+                        
+                        if let username = document.get("username") as? String{
+                            UserSingleton.sharedUserInfo.email = Auth.auth().currentUser!.email!
+                            UserSingleton.sharedUserInfo.username = username
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+        
     }
-    */
+    
+    func alertPopUp(titleInput:String, messageInput:String){
+           let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+           let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+           alert.addAction(okButton)
+           self.present(alert, animated: true, completion: nil)
+       }
+    
 
 }

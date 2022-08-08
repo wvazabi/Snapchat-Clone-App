@@ -53,6 +53,19 @@ class SignIn: UIViewController {
                     self.alertPopUp(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
                 }
                 else{
+                    
+                    let firestoreDB = Firestore.firestore()
+                    
+                    let userDictionary = ["email" : self.emailText.text!, "username" : self.usernameText.text!] as [String : Any]
+                    
+                    firestoreDB.collection( "UserInfo").addDocument(data: userDictionary) { error in
+                        if error != nil{
+                            //
+                            
+                        }
+                    }
+                    
+                    
                     self.performSegue(withIdentifier: "toFeedVC", sender: nil)
                 }
             }

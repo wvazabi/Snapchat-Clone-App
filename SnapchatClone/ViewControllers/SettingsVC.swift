@@ -26,6 +26,8 @@ class SettingsVC: UIViewController {
         
         do{
             try Auth.auth().signOut()
+            performSegue(withIdentifier: "toSigninVC", sender: nil)
+
         }catch{
             print("Error")
         }
@@ -33,7 +35,6 @@ class SettingsVC: UIViewController {
             
             
         
-        performSegue(withIdentifier: "toSigninVC", sender: nil)
         
     }
     
@@ -42,6 +43,9 @@ class SettingsVC: UIViewController {
         
         do{
             try Auth.auth().signOut()
+            performSegue(withIdentifier: "toSigninVC", sender: nil)
+            
+            
         }catch{
             print("Error")
         }
@@ -49,7 +53,6 @@ class SettingsVC: UIViewController {
             
             
         
-        performSegue(withIdentifier: "toSigninVC", sender: nil)
         
         
         
